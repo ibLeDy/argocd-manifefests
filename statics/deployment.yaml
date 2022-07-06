@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: statics-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: statics-app
+  template:
+    metadata:
+      labels:
+        app: statics-app
+    spec:
+      containers:
+        - name: statics-container
+          image: nginx:1.23
+          ports:
+            - containerPort: 80
