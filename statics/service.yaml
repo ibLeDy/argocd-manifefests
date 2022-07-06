@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: statics-app
 spec:
+  type: "LoadBalancer"
   selector:
     app: statics-app
   ports:
